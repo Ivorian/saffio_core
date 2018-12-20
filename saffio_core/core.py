@@ -12,8 +12,8 @@ lemmer = WordNetLemmatizer()
 
 
 def to_one_hot_vector(c, dic):
-	"""Obsolete: Use embedding feature in the tensor library instead."""
-	res = np.zeros(len(dic))
+    """Obsolete: Use embedding feature in the tensor library instead."""
+    res = np.zeros(len(dic))
     if c in dic:
         res[dic[c]] = 1
     return res
