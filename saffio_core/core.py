@@ -12,6 +12,7 @@ lemmer = WordNetLemmatizer()
 
 
 def to_one_hot_vector(c, dic):
+	'''Obsolete: Use embedding feature in the tensor library instead.'''
     res = np.zeros(len(dic))
     if c in dic:
         res[dic[c]] = 1
@@ -62,7 +63,19 @@ def to_dist(dic):
     return dic_dist
 
 
+def get_char_hist_dic(se):
+    dic = {}
+    for x in se:
+        for c in x:
+            if c in dic:
+                dic[c] += 1
+            else:
+                dic[c] = 1
+    return to_dist(dic)
+
+
 def get_hist_dic(se):
+	'''Obsolete: use get_char_hist_dic instead'''
     dic = {}
     for x in se:
         for c in x:
@@ -102,6 +115,7 @@ def get_char_dict(se):
 
 
 def str_cleaner(s):
+	'''Will only leave Thai, English and numbers. Everything else will be filtered out'''
     if s is None:
         return ''
     upp = s.upper()
