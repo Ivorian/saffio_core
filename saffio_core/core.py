@@ -158,3 +158,17 @@ def prune(sls, rand_state):
         return sls
     tal = max(int(rand_state.rand() * len(sls)), 1)
     return rand_state.choice(sls, tal)
+
+
+def to_skipgram(ls, neighbour=2):
+	ret = []
+	le = len(ls)
+	if le == 1:
+		return [[ls[0], 0]]
+	for i in range(le):
+		for j in range(1, neighbour+1):
+			if i-j >= 0:
+				ret.append([ls[i], ls[i-j]])
+			if i+j < le:
+				ret.append([ls[i], ls[i+j]])
+	return ret
