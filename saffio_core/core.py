@@ -75,7 +75,7 @@ def get_char_hist_dic(se):
 
 
 def get_hist_dic(se):
-	"""Obsolete: use get_char_hist_dic instead"""
+    """Obsolete: use get_char_hist_dic instead"""
     dic = {}
     for x in se:
         for c in x:
@@ -115,7 +115,7 @@ def get_char_dict(se):
 
 
 def str_cleaner(s):
-	"""Will only leave Thai, English and numbers. Everything else will be filtered out"""
+    """Will only leave Thai, English and numbers. Everything else will be filtered out"""
     if s is None:
         return ''
     upp = s.upper()

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="saffio_core",
-    version="0.2.2",
+    version="0.2.3",
     description="core",
     url="",
     author="Ivoria Nairov",
