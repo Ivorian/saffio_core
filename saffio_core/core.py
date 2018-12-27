@@ -33,6 +33,16 @@ def padd_to_x(arr, x):
     return res
 
 
+def to_dense_matrix(lls):
+    max_len = np.max([len(ls) for ls in lls])
+    new_lls = []
+    for i in range(len(lls)):
+        new_ls = np.zeros(max_len)
+        new_ls[:len(lls[i])] = lls[i]
+        new_lls.append(new_ls)
+    return np.array(new_lls)
+
+
 def to_hotbox(se, dic, max_len=None):
     """Note: only useful for RNN"""
     hot_lst = [np.reshape([to_one_hot_vector(c, dic) for c in x], -1) for x in se]
