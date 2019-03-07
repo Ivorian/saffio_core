@@ -27,11 +27,12 @@ def to_vector(tok_ls, idx):
     return res
 
 
-def padd_to_x(arr, x):
-    res = np.zeros(x)
+def padd_to_x(arr, x, padder=0):
+    res = np.full(x, padder)
     res[:arr.shape[0]] = arr
     return res
 
+	
 
 def to_dense_matrix(lls):
     max_len = np.max([len(ls) for ls in lls])
